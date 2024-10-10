@@ -76,7 +76,3 @@ By default, the server will run on `http://localhost:8080`. You can change the p
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
-
-```
-
-```
