@@ -12,10 +12,10 @@ const port = process.env.PORT || 8080;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files from the "public" directory
+// Serve static files from the "public" directory (Application-level middleware)
 app.use(express.static(path.join(__dirname, "public")));
 
-//Routes
+//Routes Handlers
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
@@ -28,7 +28,7 @@ app.get("/contact", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "contact.html"));
 });
 
-// Handle error (404)
+// Application-level middleware to handle 404 errors
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, "public", "404.html"));
 });
